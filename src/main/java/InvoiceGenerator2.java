@@ -1,16 +1,4 @@
-
-/**
- * The cab service is a subscription based cab service, where the customer books
- * a cab, and pays the bill at the end of the month.
- * 
- * UC1: Calculate Fare - Given Distance and time the invoice generator should
- * return the total fare of journey - Cost Rupees.10 per KM + Rupees.1 per minute. -
- * Minimum Fare - Rupees.5
- * 
- * @author user -Veeresh
- *
- */
-public class InvoiceGenerator1 {
+public class InvoiceGenerator2 {
 	/*
 	 * Created constants given in the problems
 	 */
@@ -29,11 +17,11 @@ public class InvoiceGenerator1 {
 	/*
 	 * Method to calculate total fare for multiple rides
 	 */
-	public double calculateFare(Ride[] rides) {
+	public InvoiceSummary calculateFare(Ride2[] rides) {
 		double totalFare = 0;
-		for (Ride ride : rides) {
+		for (Ride2 ride : rides) {
 			totalFare = this.calculateFare(ride.distance, ride.time);
 		}
-		return totalFare;
+		return new InvoiceSummary(rides.length, totalFare);
 	}
 }

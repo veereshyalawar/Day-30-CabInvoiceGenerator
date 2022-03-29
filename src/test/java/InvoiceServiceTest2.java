@@ -2,15 +2,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class InvoiceServiceTest1 {
-	InvoiceGenerator1 invoiceGenerator1 = null;
+public class InvoiceServiceTest2 {
+	InvoiceGenerator2 invoiceGenerator1 = null;
 	
 	/*
 	 * Creating invoice before test run
 	 */
 	@Before
 	public void setUp() throws Exception {
-		invoiceGenerator1 = new InvoiceGenerator1();
+		invoiceGenerator1 = new InvoiceGenerator2();
 	}
 
 	/*
@@ -39,9 +39,12 @@ public class InvoiceServiceTest1 {
 	 * To test given multiple rides should return total fare.
 	 */
 	@Test
-	public void givenMultipleRides_ShouldReturnTotalFare() {
-		Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
-		double fare = invoiceGenerator1.calculateFare(rides);
-		Assert.assertEquals(30, fare, 0.0);
+	public void givenMultipleRides_ShouldReturnInvoiceSummary() {
+		Ride2[] rides = { 
+				new Ride2(2.0, 5), new Ride2(0.1, 1) 
+				};
+         InvoiceSummary summary= invoiceGenerator1.calculateFare(rides);
+		InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 30.0);
+		Assert.assertEquals(expectedInvoiceSummary, summary);
 	}
 }
