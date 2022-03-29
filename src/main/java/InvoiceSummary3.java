@@ -1,5 +1,5 @@
 
-public class InvoiceSummary {
+public class InvoiceSummary3 {
 
 	/**
 	 * Data for generating Invoice
@@ -8,7 +8,7 @@ public class InvoiceSummary {
 	private final double totalFare;
 	private final int numOfRides;
 
-	public InvoiceSummary(int numOfRides, double totalFare) {
+	public InvoiceSummary3(int numOfRides, double totalFare) {
 		this.numOfRides = numOfRides;
 		this.totalFare = totalFare;
 		this.averageFare = this.totalFare;
@@ -24,7 +24,7 @@ public class InvoiceSummary {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		InvoiceSummary other = (InvoiceSummary) obj;
+		InvoiceSummary3 other = (InvoiceSummary3) obj;
 		if (Double.doubleToLongBits(averageFare) != Double.doubleToLongBits(other.averageFare))
 			return false;
 		if (numOfRides != other.numOfRides)
